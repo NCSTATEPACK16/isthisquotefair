@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildRange, compareLine, compareQuote, confidenceFor, type BenchmarkSource, type CompareContext } from "../src/compare/index.ts";
+import { buildRange, compareLine, compareQuote, confidenceFor, mergeLinesByKey, type BenchmarkSource, type CompareContext } from "../src/compare/index.ts";
 import { median, percentileRank, quantile } from "../src/compare/stats.ts";
 
 const src = (low: number, typical: number, high: number, url = `https://example.com/${low}`): BenchmarkSource => ({ low, typical, high, url });
@@ -116,5 +116,43 @@ describe("compareQuote", () => {
   it("returns insufficient_data overall when nothing is comparable", () => {
     const v = compareQuote([{ key: "zzz", description: "x", qty: 1, lineTotal: 1 }], contexts);
     expect(v).toMatchObject({ flag: "insufficient_data", pctVsMedian: null, confidence: null });
+  });
+});
+
+describe("mergeLinesByKey", () => {
+  it("compares a parts + labor split as one job, not two cheap halves", () => {
+    const contexts = new Map([["auto.brakes.front_pads_rotors", ctx([src(300, 450, 600), src(350, 480, 650)])]]);
+    const v = compareQuote(
+      [
+        { key: "auto.brakes.front_pads_rotors", description: "Pads & rotors (parts)", qty: 1, lineTotal: 238.4 },
+        { key: "auto.brakes.front_pads_rotors", description: "Labor 1.6 hr", qty: 1, lineTotal: 232 },
+      ],
+      contexts,
+    );
+    expect(v.lines).toHaveLength(1);
+    expect(v.lines[0]).toMatchObject({ unitPrice: 470.4, flag: "within", description: "Pads & rotors (parts) + Labor 1.6 hr" });
+  });
+
+  it("keeps the per-unit qty from the parts line and never merges unclassified lines", () => {
+    const merged = mergeLinesByKey([
+      { key: "electrical.device.gfci_outlet", description: "GFCI x2", qty: 2, lineTotal: 60 },
+      { key: "unclassified", description: "a", qty: 1, lineTotal: 5 },
+      { key: "electrical.device.gfci_outlet", description: "labor", qty: 1, lineTotal: 180 },
+      { key: "unclassified", description: "b", qty: 1, lineTotal: 7 },
+    ]);
+    expect(merged.map((l) => [l.key, l.qty, l.lineTotal])).toEqual([
+      ["electrical.device.gfci_outlet", 2, 240],
+      ["unclassified", 1, 5],
+      ["unclassified", 1, 7],
+    ]);
+  });
+
+  it("does not mutate its input", () => {
+    const input = [
+      { key: "k", description: "a", qty: 1, lineTotal: 1 },
+      { key: "k", description: "b", qty: 1, lineTotal: 2 },
+    ];
+    mergeLinesByKey(input);
+    expect(input[0]!.lineTotal).toBe(1);
   });
 });

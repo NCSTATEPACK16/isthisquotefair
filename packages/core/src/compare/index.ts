@@ -132,11 +132,36 @@ export function compareLine(line: CompareLineInput, ctx: CompareContext | undefi
 }
 
 /**
- * Overall verdict: sums the quote's comparable lines (those with a range) against the summed
+ * Invoices often split one job into parts + labor (+ fee) lines under the same taxonomy key, while
+ * benchmarks price the whole job. Lines sharing a key are merged into one comparison: totals are
+ * summed and qty is the largest printed qty (e.g. "2 outlets" on the parts line, qty 1 on labor).
+ * Unclassified lines stay separate. Order follows each key's first appearance.
+ */
+export function mergeLinesByKey(lines: readonly CompareLineInput[]): CompareLineInput[] {
+  const out: CompareLineInput[] = [];
+  const byKey = new Map<string, CompareLineInput>();
+  for (const l of lines) {
+    const prev = l.key === UNCLASSIFIED ? undefined : byKey.get(l.key);
+    if (!prev) {
+      const copy = { ...l };
+      out.push(copy);
+      if (l.key !== UNCLASSIFIED) byKey.set(l.key, copy);
+      continue;
+    }
+    prev.lineTotal = round2(prev.lineTotal + l.lineTotal);
+    prev.qty = Math.max(prev.qty, l.qty);
+    prev.description = `${prev.description} + ${l.description}`;
+  }
+  return out;
+}
+
+/**
+ * Overall verdict: merges lines by key (see mergeLinesByKey), then sums the quote's comparable lines (those with a range) against the summed
  * low / typical / high of the same lines, scaled by qty. Overall confidence is the *lowest*
  * confidence among compared lines, so a single thin line can't be hidden by strong ones.
  */
-export function compareQuote(lines: readonly CompareLineInput[], contexts: ReadonlyMap<string, CompareContext>): Verdict {
+export function compareQuote(rawLines: readonly CompareLineInput[], contexts: ReadonlyMap<string, CompareContext>): Verdict {
+  const lines = mergeLinesByKey(rawLines);
   const results = lines.map((l) => compareLine(l, contexts.get(l.key)));
   const compared = results
     .map((r, i) => ({ r, qty: lines[i]!.qty > 0 ? lines[i]!.qty : 1 }))

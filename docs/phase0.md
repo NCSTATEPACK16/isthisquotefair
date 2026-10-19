@@ -90,6 +90,13 @@ Items marked **(decision)** need an answer from John. The rest describe what was
 
 ## Done
 
+- **Supabase project** `isthisquotefair` (ref `brmbbpkrttlklavjdgml`, us-east-1) created, with the
+  init migration applied and 89 taxonomy keys seeded. Live check: anon reads only `taxonomy_keys`.
+  Security advisor shows only the expected INFO "RLS enabled, no policy" on the four
+  service-role-only tables.
+- Fix: `compareQuote` merges lines that share a taxonomy key (parts + labor for one job) before
+  comparing against whole-job benchmarks (`mergeLinesByKey`).
+
 - Monorepo scaffold (§11 layout), pnpm workspaces, CI (`.github/workflows/ci.yml`) and an eval
   gate workflow (`eval.yml`, which runs when the `ANTHROPIC_API_KEY` secret is set).
 - `supabase/migrations/20261018000000_init.sql`: all 7 tables, RLS on each, a seed generated from
