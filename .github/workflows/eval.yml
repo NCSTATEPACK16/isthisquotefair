@@ -1,0 +1,33 @@
+name: Extraction eval
+# Gate for pipeline changes (CLAUDE.md "Evals gate pipeline changes").
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - packages/core/src/extract/**
+      - packages/core/src/providers/**
+      - taxonomy/**
+      - eval/**
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Synthetic PII invoices (0 leaks)
+        if: env.ANTHROPIC_API_KEY != ''
+        run: pnpm eval -- --dir eval/pii --enforce
+      - name: Golden set (≥95% lines, 100% totals)
+        if: env.ANTHROPIC_API_KEY != ''
+        run: pnpm eval -- --enforce
+      - name: Skipped
+        if: env.ANTHROPIC_API_KEY == ''
+        run: echo "::warning::ANTHROPIC_API_KEY secret not set; eval skipped"

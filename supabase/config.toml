@@ -1,0 +1,25 @@
+# Minimal local config; run `supabase init` defaults for the rest when the CLI is set up.
+project_id = "isthisquotefair"
+
+[api]
+port = 54321
+schemas = ["public"]
+
+[db]
+port = 54322
+major_version = 16
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
+
+[auth]
+site_url = "http://localhost:5173"
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+enable_confirmations = false
+
+[functions.stripe-webhook]
+verify_jwt = false

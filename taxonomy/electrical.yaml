@@ -1,0 +1,73 @@
+category: electrical
+label: Electrical
+services:
+  - key: electrical.service.call_fee
+    label: Service call / trip fee
+    unit: job
+    search_hint: electrician service call fee
+    aliases: [trip charge, dispatch]
+  - key: electrical.panel.upgrade_200a
+    label: Panel upgrade to 200A
+    unit: job
+    search_hint: 200 amp electrical panel upgrade
+    aliases: [service upgrade, panel replacement]
+  - key: electrical.panel.breaker_replace
+    label: Breaker replacement (standard)
+    unit: each
+    search_hint: circuit breaker replacement
+    aliases: [breaker]
+  - key: electrical.panel.afci_gfci_breaker
+    label: AFCI / GFCI breaker replacement
+    unit: each
+    search_hint: AFCI breaker replacement installed
+    aliases: [arc fault breaker, dual function breaker]
+  - key: electrical.circuit.new_20a
+    label: New 20A circuit
+    unit: each
+    search_hint: new 20 amp circuit installation
+    aliases: [dedicated circuit]
+  - key: electrical.circuit.ev_charger_240v
+    label: EV charger / 240V circuit install
+    unit: job
+    search_hint: level 2 EV charger installation
+    aliases: [EV charger, NEMA 14-50, 240V outlet]
+  - key: electrical.device.outlet_replace
+    label: Outlet replacement
+    unit: each
+    search_hint: electrical outlet replacement
+    aliases: [receptacle]
+  - key: electrical.device.gfci_outlet
+    label: GFCI outlet install
+    unit: each
+    search_hint: GFCI outlet installation
+    aliases: [GFCI]
+  - key: electrical.device.switch_replace
+    label: Switch / dimmer replacement
+    unit: each
+    search_hint: light switch replacement
+    aliases: [dimmer, switch]
+  - key: electrical.fixture.light_fixture_install
+    label: Light fixture install (existing box)
+    unit: each
+    search_hint: light fixture installation
+    aliases: [fixture install]
+  - key: electrical.fixture.ceiling_fan_install
+    label: Ceiling fan install (existing box)
+    unit: each
+    search_hint: ceiling fan installation
+    aliases: [fan install]
+  - key: electrical.safety.whole_home_surge
+    label: Whole-home surge protector
+    unit: job
+    search_hint: whole house surge protector installed
+    aliases: [surge protector, SPD]
+  - key: electrical.generator.interlock_kit
+    label: Generator interlock kit + inlet
+    unit: job
+    search_hint: generator interlock kit installation
+    aliases: [interlock, generator inlet]
+  - key: electrical.labor.hourly_rate
+    label: Electrician labor rate
+    unit: hour
+    search_hint: electrician hourly rate
+    aliases: [labor]

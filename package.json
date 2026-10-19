@@ -1,0 +1,23 @@
+{
+  "name": "isthisquotefair",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.28.0",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "pnpm --filter @itqf/web dev",
+    "build": "pnpm taxonomy:build && pnpm --filter @itqf/web build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "taxonomy:build": "tsx scripts/build-taxonomy.ts",
+    "taxonomy:check": "tsx scripts/build-taxonomy.ts --check",
+    "eval": "pnpm --filter @itqf/eval eval",
+    "db:test": "bash scripts/test-migrations.sh"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "yaml": "^2.9.1"
+  }
+}

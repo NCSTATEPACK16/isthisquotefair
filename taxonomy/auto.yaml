@@ -1,0 +1,98 @@
+category: auto
+label: Auto repair
+services:
+  - key: auto.brakes.front_pads_rotors
+    label: Front brake pads and rotors replacement
+    unit: job
+    search_hint: front brake pads and rotors replacement
+    aliases: [front brake job, front pads and rotors, brake service front]
+  - key: auto.brakes.rear_pads_rotors
+    label: Rear brake pads and rotors replacement
+    unit: job
+    search_hint: rear brake pads and rotors replacement
+    aliases: [rear brake job, rear pads and rotors]
+  - key: auto.brakes.pads_only
+    label: Brake pads only (one axle)
+    unit: job
+    search_hint: brake pad replacement one axle
+    aliases: [brake pads, pad replacement]
+  - key: auto.brakes.fluid_flush
+    label: Brake fluid flush
+    unit: job
+    search_hint: brake fluid flush
+    aliases: [brake fluid exchange, brake bleed]
+  - key: auto.maintenance.oil_change_synthetic
+    label: Full synthetic oil change
+    unit: job
+    search_hint: full synthetic oil change
+    aliases: [synthetic oil service, lube oil filter synthetic]
+  - key: auto.maintenance.oil_change_conventional
+    label: Conventional oil change
+    unit: job
+    search_hint: conventional oil change
+    aliases: [oil and filter change, LOF]
+  - key: auto.maintenance.tire_rotation
+    label: Tire rotation
+    unit: job
+    search_hint: tire rotation
+    aliases: [rotate tires]
+  - key: auto.maintenance.wheel_alignment
+    label: Four-wheel alignment
+    unit: job
+    search_hint: four wheel alignment
+    aliases: [alignment, 4 wheel alignment]
+  - key: auto.maintenance.cabin_air_filter
+    label: Cabin air filter replacement
+    unit: job
+    search_hint: cabin air filter replacement
+    aliases: [cabin filter]
+  - key: auto.maintenance.engine_air_filter
+    label: Engine air filter replacement
+    unit: job
+    search_hint: engine air filter replacement
+    aliases: [air filter]
+  - key: auto.maintenance.coolant_flush
+    label: Coolant flush
+    unit: job
+    search_hint: coolant flush
+    aliases: [radiator flush, antifreeze service]
+  - key: auto.maintenance.transmission_fluid
+    label: Transmission fluid service
+    unit: job
+    search_hint: transmission fluid change
+    aliases: [trans flush, ATF service]
+  - key: auto.electrical.battery_replacement
+    label: Battery replacement (installed)
+    unit: job
+    search_hint: car battery replacement installed
+    aliases: [battery, replace battery]
+  - key: auto.electrical.alternator_replacement
+    label: Alternator replacement
+    unit: job
+    search_hint: alternator replacement
+    aliases: [alternator]
+  - key: auto.engine.spark_plugs
+    label: Spark plug replacement
+    unit: job
+    search_hint: spark plug replacement
+    aliases: [tune up, plugs]
+  - key: auto.hvac.ac_recharge
+    label: A/C recharge
+    unit: job
+    search_hint: car AC recharge
+    aliases: [AC service, A/C evacuate and recharge]
+  - key: auto.diagnostic.check_engine
+    label: Check-engine diagnostic
+    unit: job
+    search_hint: check engine light diagnostic fee
+    aliases: [diagnostic fee, scan, diag]
+  - key: auto.inspection.nc_state_inspection
+    label: NC state safety/emissions inspection
+    unit: job
+    search_hint: NC state inspection fee
+    aliases: [state inspection, emissions inspection]
+  - key: auto.labor.hourly_rate
+    label: Shop labor rate
+    unit: hour
+    search_hint: auto repair shop labor rate per hour
+    aliases: [labor, labor rate]

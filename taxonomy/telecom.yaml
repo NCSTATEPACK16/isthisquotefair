@@ -1,0 +1,63 @@
+category: telecom
+label: Phone / internet bills
+services:
+  - key: telecom.internet.plan_300mbps
+    label: Home internet plan (~300 Mbps)
+    unit: month
+    search_hint: 300 Mbps home internet plan price
+    aliases: [internet service, broadband]
+  - key: telecom.internet.plan_1gig
+    label: Home internet plan (~1 Gbps)
+    unit: month
+    search_hint: 1 gig home internet plan price
+    aliases: [gigabit, fiber 1 gig]
+  - key: telecom.internet.modem_rental
+    label: Modem / gateway rental
+    unit: month
+    search_hint: internet modem rental fee
+    aliases: [equipment fee, gateway rental, router rental]
+  - key: telecom.internet.installation
+    label: Internet installation fee
+    unit: job
+    search_hint: internet installation fee
+    aliases: [setup fee, activation, professional install]
+  - key: telecom.mobile.unlimited_line
+    label: Unlimited mobile line
+    unit: month
+    search_hint: unlimited cell phone plan price per line
+    aliases: [line access, unlimited plan]
+  - key: telecom.mobile.device_installment
+    label: Device installment payment
+    unit: month
+    search_hint: phone device payment monthly
+    aliases: [device payment, equipment installment]
+  - key: telecom.mobile.insurance
+    label: Device protection / insurance
+    unit: month
+    search_hint: phone insurance monthly cost
+    aliases: [protection plan, device protection]
+  - key: telecom.fees.activation
+    label: Activation / upgrade fee
+    unit: each
+    search_hint: cell phone activation fee
+    aliases: [upgrade fee, connection charge]
+  - key: telecom.fees.admin_regulatory
+    label: Administrative / regulatory fee
+    unit: month
+    search_hint: administrative fee regulatory cost recovery fee
+    aliases: [admin fee, regulatory cost recovery]
+  - key: telecom.fees.broadcast_tv
+    label: Broadcast TV / regional sports fee
+    unit: month
+    search_hint: broadcast TV fee regional sports fee
+    aliases: [broadcast fee, RSN fee]
+  - key: telecom.tv.box_rental
+    label: TV box / receiver rental
+    unit: month
+    search_hint: cable box rental fee
+    aliases: [receiver fee, DVR fee]
+  - key: telecom.fees.late_fee
+    label: Late payment fee
+    unit: each
+    search_hint: late payment fee internet bill
+    aliases: [late charge]

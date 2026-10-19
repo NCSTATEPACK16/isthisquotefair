@@ -1,0 +1,78 @@
+category: vet
+label: Veterinary
+services:
+  - key: vet.exam.wellness_dog
+    label: Wellness exam (dog)
+    unit: job
+    search_hint: vet wellness exam cost dog
+    aliases: [office visit, physical exam, annual exam]
+  - key: vet.exam.wellness_cat
+    label: Wellness exam (cat)
+    unit: job
+    search_hint: vet wellness exam cost cat
+    aliases: [office visit, physical exam]
+  - key: vet.exam.emergency
+    label: Emergency exam fee
+    unit: job
+    search_hint: emergency vet exam fee
+    aliases: [ER exam, after hours exam]
+  - key: vet.vaccine.rabies
+    label: Rabies vaccine
+    unit: each
+    search_hint: rabies vaccine cost vet
+    aliases: [rabies]
+  - key: vet.vaccine.dhpp
+    label: DHPP / distemper combo vaccine
+    unit: each
+    search_hint: DHPP vaccine cost
+    aliases: [distemper, DA2PP, DAPP]
+  - key: vet.vaccine.bordetella
+    label: Bordetella vaccine
+    unit: each
+    search_hint: bordetella vaccine cost
+    aliases: [kennel cough]
+  - key: vet.vaccine.fvrcp
+    label: FVRCP vaccine (cat)
+    unit: each
+    search_hint: FVRCP vaccine cost
+    aliases: [feline distemper]
+  - key: vet.lab.heartworm_test
+    label: Heartworm test
+    unit: each
+    search_hint: heartworm test cost
+    aliases: [4Dx, SNAP test, HW test]
+  - key: vet.lab.fecal
+    label: Fecal exam
+    unit: each
+    search_hint: dog fecal test cost
+    aliases: [fecal float, ova and parasites]
+  - key: vet.lab.senior_bloodwork
+    label: Bloodwork panel (CBC + chemistry)
+    unit: each
+    search_hint: dog blood work CBC chemistry panel cost
+    aliases: [CBC, chem panel, blood panel]
+  - key: vet.dental.cleaning_anesthesia
+    label: Dental cleaning under anesthesia
+    unit: job
+    search_hint: dog dental cleaning under anesthesia cost
+    aliases: [COHAT, dental prophy]
+  - key: vet.surgery.spay_dog
+    label: Spay (dog)
+    unit: job
+    search_hint: dog spay cost
+    aliases: [ovariohysterectomy, OHE]
+  - key: vet.surgery.neuter_dog
+    label: Neuter (dog)
+    unit: job
+    search_hint: dog neuter cost
+    aliases: [castration]
+  - key: vet.imaging.xray
+    label: Radiographs (x-ray, per study)
+    unit: each
+    search_hint: dog x-ray cost
+    aliases: [radiograph, x-ray]
+  - key: vet.misc.microchip
+    label: Microchip
+    unit: each
+    search_hint: pet microchip cost
+    aliases: [microchip implant]

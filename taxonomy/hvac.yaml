@@ -1,0 +1,73 @@
+category: hvac
+label: HVAC
+services:
+  - key: hvac.service.diagnostic_call
+    label: Service call / diagnostic fee
+    unit: job
+    search_hint: HVAC service call diagnostic fee
+    aliases: [trip charge, service call, diagnostic]
+  - key: hvac.maintenance.ac_tune_up
+    label: A/C tune-up
+    unit: job
+    search_hint: AC tune up
+    aliases: [AC maintenance, cooling check]
+  - key: hvac.maintenance.furnace_tune_up
+    label: Furnace / heat pump tune-up
+    unit: job
+    search_hint: furnace tune up
+    aliases: [heating maintenance, heat check]
+  - key: hvac.repair.capacitor
+    label: Capacitor replacement
+    unit: job
+    search_hint: AC capacitor replacement
+    aliases: [run capacitor, dual run capacitor, start capacitor]
+  - key: hvac.repair.contactor
+    label: Contactor replacement
+    unit: job
+    search_hint: AC contactor replacement
+    aliases: [contactor]
+  - key: hvac.repair.condenser_fan_motor
+    label: Condenser fan motor replacement
+    unit: job
+    search_hint: AC condenser fan motor replacement
+    aliases: [outdoor fan motor]
+  - key: hvac.repair.blower_motor
+    label: Blower motor replacement
+    unit: job
+    search_hint: furnace blower motor replacement
+    aliases: [indoor blower motor, ECM motor]
+  - key: hvac.repair.refrigerant_recharge
+    label: Refrigerant recharge (per lb)
+    unit: each
+    search_hint: R-410A refrigerant cost per pound
+    aliases: [freon, R410A, R-454B, refrigerant per lb]
+  - key: hvac.repair.refrigerant_leak_search
+    label: Refrigerant leak search
+    unit: job
+    search_hint: AC refrigerant leak detection
+    aliases: [leak check, leak test]
+  - key: hvac.repair.thermostat_install
+    label: Thermostat replacement (installed)
+    unit: job
+    search_hint: thermostat installation
+    aliases: [thermostat, smart thermostat install]
+  - key: hvac.repair.drain_line_clear
+    label: Condensate drain line clearing
+    unit: job
+    search_hint: AC condensate drain line clog clear
+    aliases: [drain line, condensate line]
+  - key: hvac.replace.ac_condenser_3ton
+    label: A/C condenser replacement (~3 ton)
+    unit: job
+    search_hint: 3 ton AC condenser replacement installed
+    aliases: [new AC unit, condenser replacement]
+  - key: hvac.replace.heat_pump_system_3ton
+    label: Heat pump system replacement (~3 ton)
+    unit: job
+    search_hint: 3 ton heat pump system replacement installed
+    aliases: [heat pump replacement, new heat pump]
+  - key: hvac.labor.hourly_rate
+    label: HVAC labor rate
+    unit: hour
+    search_hint: HVAC technician labor rate per hour
+    aliases: [labor]

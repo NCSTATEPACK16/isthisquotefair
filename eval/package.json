@@ -1,0 +1,21 @@
+{
+  "name": "@itqf/eval",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "eval": "tsx src/run.ts",
+    "synth": "tsx src/synthetic.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.135.0",
+    "@itqf/core": "workspace:*",
+    "sharp": "^0.35.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "vitest": "^5.0.5"
+  }
+}

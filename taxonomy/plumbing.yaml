@@ -1,0 +1,78 @@
+category: plumbing
+label: Plumbing
+services:
+  - key: plumbing.service.call_fee
+    label: Service call / trip fee
+    unit: job
+    search_hint: plumber service call fee
+    aliases: [trip charge, dispatch fee]
+  - key: plumbing.drain.clear_sink
+    label: Sink / tub drain clearing
+    unit: job
+    search_hint: plumber clear clogged sink drain
+    aliases: [drain cleaning, snake drain]
+  - key: plumbing.drain.main_line_cable
+    label: Main sewer line clearing (cable)
+    unit: job
+    search_hint: main sewer line cleaning
+    aliases: [main line snake, sewer cleanout]
+  - key: plumbing.drain.hydro_jet
+    label: Hydro-jetting
+    unit: job
+    search_hint: hydro jetting sewer line
+    aliases: [jetting]
+  - key: plumbing.drain.camera_inspection
+    label: Sewer camera inspection
+    unit: job
+    search_hint: sewer camera inspection
+    aliases: [video inspection, scope]
+  - key: plumbing.water_heater.tank_replace_50gal
+    label: Water heater replacement (50 gal tank)
+    unit: job
+    search_hint: 50 gallon water heater replacement installed
+    aliases: [water heater install, new water heater]
+  - key: plumbing.water_heater.tankless_install
+    label: Tankless water heater install
+    unit: job
+    search_hint: tankless water heater installation
+    aliases: [tankless]
+  - key: plumbing.fixture.toilet_replace
+    label: Toilet replacement (installed)
+    unit: job
+    search_hint: toilet replacement installed
+    aliases: [new toilet, toilet install]
+  - key: plumbing.fixture.toilet_repair
+    label: Toilet repair (fill valve / flapper)
+    unit: job
+    search_hint: toilet repair fill valve flapper
+    aliases: [running toilet, fill valve]
+  - key: plumbing.fixture.faucet_replace
+    label: Faucet replacement (labor + basic faucet)
+    unit: job
+    search_hint: kitchen faucet replacement installed
+    aliases: [faucet install]
+  - key: plumbing.fixture.garbage_disposal
+    label: Garbage disposal replacement
+    unit: job
+    search_hint: garbage disposal replacement installed
+    aliases: [disposal]
+  - key: plumbing.repair.leak_repair_accessible
+    label: Accessible pipe leak repair
+    unit: job
+    search_hint: pipe leak repair plumber
+    aliases: [leak repair, pipe repair]
+  - key: plumbing.repair.shutoff_valve
+    label: Shut-off valve replacement
+    unit: job
+    search_hint: water shut off valve replacement
+    aliases: [main valve, angle stop]
+  - key: plumbing.repair.sump_pump_replace
+    label: Sump pump replacement
+    unit: job
+    search_hint: sump pump replacement
+    aliases: [sump pump]
+  - key: plumbing.labor.hourly_rate
+    label: Plumber labor rate
+    unit: hour
+    search_hint: plumber hourly rate
+    aliases: [labor]
